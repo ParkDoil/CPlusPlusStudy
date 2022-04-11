@@ -235,7 +235,7 @@ int main()
 	int win_grade = 15; //승리 점수
 	int player_havetoken; //플레이어 소지 토큰(10개 제한)
 
-	//실습
+	//실습 과제
 	srand(time(NULL)); // 시드값 초기화
 	int problem1_num; //실습 1번 문제 출력값
 	int problem2_input_minnum; //실습 2번 문제 작은값
@@ -244,6 +244,10 @@ int main()
 	int problem2_out_num; //실습 2번 숫자 사이의 랜덤한 출력값
 	int problem3_correct_num; // 실습 3번 정답 숫자
 	int problem3_input_num; // 실습 3번 입력 숫자
+
+	//번외 숙제
+	cout << endl << "번외 숙제 : 랜덤 함수 값의 데이터 크기 구하기" << endl;
+	cout << "랜덤 함수의 값의 데이터크기는" << sizeof(rand()) << "Byte 입니다." << endl << endl;
 
 	//실습 1번
 	cout << "<< 실습 1번 문제 >> " << endl;
