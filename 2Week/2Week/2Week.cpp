@@ -394,7 +394,17 @@ int main()
 		star1 = memory1_num;
 		cout << endl;
 	}
-	
+	cout << endl << "1번" << endl;
+	for (int i = 0; i <= 5; i++) {
+		for (int j = 0; j < i; j++) {
+			cout << "*";
+		}
+		for (int k = 5; k > i; k--) {
+			cout << " ";
+		}
+		cout << endl;
+	}
+
 	// 2)
 	cout << endl << "2번" << endl;
 	int star_count2 = 1;
@@ -417,6 +427,16 @@ int main()
 		star_count2++;
 		cout << endl;
 	}
+	cout << endl << "2번" << endl;
+	for (int i = 0; i <= 5; i++) {
+		for (int j = 5; j > i; j--) {
+			cout << " ";
+		}
+		for (int k = 0; k < i; k++) {
+			cout << "*";
+		}
+		cout << endl;
+	}
 
 	// 3)
 	cout << endl << "3번" << endl;
@@ -429,6 +449,16 @@ int main()
 			star_count3--;
 		}
 		star_count3 = memory3_num-1;
+		cout << endl;
+	}
+	cout << endl << "3번" << endl;
+	for (int i = 0; i <= 5; i++) {
+		for (int j = 5; j > i; j--) {
+			cout << "*";
+		}
+		for (int k = 0; k < i; k++) {
+			cout << " ";
+		}
 		cout << endl;
 	}
 
@@ -452,6 +482,16 @@ int main()
 			cout << "    *";
 		}
 		star_count4++;
+		cout << endl;
+	}
+	cout << endl << "4번" << endl;
+	for (int i = 0; i <= 5; i++) {
+		for (int j = 0; j < i; j++) {
+			cout << " ";
+		}
+		for (int k = 5; k > i; k--) {
+			cout << "*";
+		}
 		cout << endl;
 	}
 
@@ -533,52 +573,6 @@ int main()
 			cout << "    *    ";
 		}
 		star_count7++;
-		cout << endl;
-	}
-	// 1)
-	cout << endl << "1번" << endl;
-	for (int i = 0; i <= 5; i++) {
-		for (int j = 0; j < i; j++) {
-			cout << "*";
-		}
-		for (int k = 5; k > i; k--) {
-			cout << " ";
-		}
-		cout << endl;
-	}
-
-	// 2)
-	cout << endl << "2번" << endl;
-	for (int i = 0; i <= 5; i++) {
-		for (int k = 5; k > i; k--) {
-			cout << " ";
-		}
-		for (int j = 0; j < i; j++) {
-			cout << "*";
-		}
-		cout << endl;
-	}
-
-	// 3)
-	cout << endl << "3번" << endl;
-	for (int i = 0; i <= 5; i++) {
-		for (int k = 5; k > i; k--) {
-			cout << "*";
-		}
-		for (int j = 0; j < i; j++) {
-			cout << " ";
-		}
-		cout << endl;
-	}
-	// 4)
-	cout << endl << "4번" << endl;
-	for (int i = 0; i <= 5; i++) {
-		for (int j = 0; j < i; j++) {
-			cout << " ";
-		}
-		for (int k = 5; k > i; k--) {
-			cout << "*";
-		}
 		cout << endl;
 	}
 
