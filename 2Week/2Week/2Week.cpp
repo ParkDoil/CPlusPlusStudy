@@ -1,61 +1,4 @@
-﻿/*
-	제어문		데이터(타입) / 연산자 / <제어구조>
-	
-	1. 조건문 : 특정 조건에 따라서 실행문의 실행여부를 제어 => if문 / switch문
-	2. 반복문 : 특정 조건에 따라서 실행문을 일정 횟수만큼 반복 실행 제어 => for문 / while문
-
-	<조건문>
-	1.1) if 문
-	if (조건식(참/거짓)) {
-		실행문;
-	}
-	else if (조건식2(참/거짓)) {
-		실행문2;
-	}
-	else {
-		실행문3;
-	}
-
-	1.2) switch 문
-	switch(정수형 변수) {
-		case 정수1 :
-			    실행문1;
-			    break;
-			.
-			.
-			.
-		case 정수n :
-			    실행문n;
-			    break;
-		default: // 해당하는 정수 값이 없을때
-				실행문d;
-				break;
-	}
-
-	<반복문>
-	2.1.1) while문
-	while (조건식){
-		실행문;
-		조건식을 바꾸는 실행문; // while문을 중단시키는 첫번째 방법
-		if(조건식){
-			break;			  // while문을 중단시키는 두번째 방법
-		}
-	}
-
-	2.1.2) do-while문
-	do {
-		실행문;
-	}
-	while (조건식);
-
-	2.2) for문
-	for((1)초기식; (2)조건식; (3)증감식){
-		(4)실행문;
-	}
-	=> 순서 : (1) -> (2) -> (4) -> (3) -> (2) -> (4) -> (3) -> ... 조건식의 결과값이 0이 나올 때 까지
-*/
-
-#include <iostream>
+﻿#include <iostream>
 #include <string>
 #include <ctime>
 #include <Windows.h>
@@ -68,7 +11,7 @@ int main()
 	//실습 1번 3 ~ 7 사이의 랜덤한 숫자 하나 출력
 	int rand_num;
 	//입력 (X)
-	
+
 	//처리
 	rand_num = rand() % 5 + 3;
 	//출력
@@ -103,7 +46,7 @@ int main()
 		10이하 9초과 이면 "9보다 큽니다." 출력
 		9이하 6초과 이면 "6보다 큽니다." 출력
 		6이하 이면 "6보다 작습니다." 출력
-		
+
 	*/
 	//입력
 	int input_num;
@@ -136,7 +79,7 @@ int main()
 	int hometown_num;
 	cout << "당신의 고향은 어디입니까?" << endl << "1.서울  2.대전  3.전주  4.부산  5.제주도" << endl << "_ ";
 	cin >> hometown_num;
-	
+
 	//처리, 출력
 	switch (hometown_num) {
 	case 1:
@@ -217,9 +160,9 @@ int main()
 		cin >> input_quiz_num;
 		(input_quiz_num == correct_num) ? cout << "정답! 프로그램 종료" << endl : cout << "오답!" << endl;
 	}
-	
+
 	/*
-		for문 
+		for문
 		실습1. 10부터 1까지 차례대로 출력되는 코드를 작성해보자.
 		실습2. 100미만의 3의 배수를 차례대로 출력되는 코드 작성해보자
 		실습3. 1000미만의 2의 승수를 차례대로 출력
@@ -237,7 +180,7 @@ int main()
 	cout << "<< 실습 1번 >>" << endl;
 	int question1_num = 10;
 	for (int i = 0; i < 10; i++) {
-		cout << " " << question1_num<< endl ;
+		cout << " " << question1_num << endl;
 		question1_num--;
 	}
 
@@ -249,7 +192,7 @@ int main()
 	}
 
 	cout << "<< 실습 3번 >>" << endl;
-	for (int i = 1; i < 1000; i*=2) {
+	for (int i = 1; i < 1000; i *= 2) {
 		cout << " " << i << endl;
 	}
 
@@ -265,15 +208,15 @@ int main()
 	cout << "구구단 2~9단 출력" << endl;
 	int gugudan1_num = 2;
 	while (gugudan1_num != 10) {
-		cout <<" <" << gugudan1_num << "단>" << endl;
+		cout << " <" << gugudan1_num << "단>" << endl;
 		for (int i = 1; i <= 9; i++) {
 			cout << " " << gugudan1_num << " * " << i << " = " << gugudan1_num * i << endl;
 		}
 		gugudan1_num++;
 		cout << endl;
 	}
-	
-	
+
+
 	/*4.3) 구구단 2단 ~ 9단을 다음과 같은 형태로 출력해보자
 		2단 3단 4단
 		5단 6단 7단
@@ -325,52 +268,122 @@ int main()
 			break;
 		}
 	}
+	//숙제 : 별찍기 7개
+		/*
+			1)
+			*
+			**
+			***
+			****
+			*****
+		*/
+	cout << endl << "1번";
+	for (int i1 = 0; i1 <= 5; i1++) {
+		for (int j1 = 0; j1 < i1; j1++) {
+			cout << "*";
+		}
+		for (int k1 = 5; k1 > i1; k1--) {
+			cout << " ";
+		}
+		cout << endl;
+	}
 
 	/*
-		숙제 : 별찍기 6개
-		1) 
-		*
-		**
-		***
-		****
-		*****
-		
 		2)
 			*
 		   **
 		  ***
 		 ****
 		*****
-		
+	*/
+	cout << endl << "2번";
+	for (int i2 = 0; i2 <= 5; i2++) {
+		for (int j2 = 5; j2 > i2; j2--) {
+			cout << " ";
+		}
+		for (int k2 = 0; k2 < i2; k2++) {
+			cout << "*";
+		}
+		cout << endl;
+	}
+
+	/*
 		3)
 		*****
 		****
 		***
 		**
 		*
-		
+	*/
+	cout << endl << "3번" << endl;
+	for (int i3 = 0; i3 <= 5; i3++) {
+		for (int j3 = 5; j3 > i3; j3--) {
+			cout << "*";
+		}
+		for (int k3 = 0; k3 < i3; k3++) {
+			cout << " ";
+		}
+		cout << endl;
+	}
+
+	/*
 		4)
 		*****
 		 ****
 		  ***
 		   **
-		    *
-		
+			*
+	*/
+	cout << endl << "4번" << endl;
+	for (int i4 = 0; i4 <= 5; i4++) {
+		for (int j4 = 0; j4 < i4; j4++) {
+			cout << " ";
+		}
+		for (int k4 = 5; k4 > i4; k4--) {
+			cout << "*";
+		}
+		cout << endl;
+	}
+
+	/*
 		5)
 			*
 		   ***
 		  *****
 		 *******
 		*********
-		
+	*/
+	cout << endl << "5번" << endl;
+	for (int i5 = 0; i5 < 5; i5++) { //칸수
+		for (int empty1 = 4; empty1 > i5; empty1--) { //공백
+			cout << " ";
+		}
+		for (int star1 = 0; star1 < 2 * i5 + 1; star1++) { //별
+			cout << "*";
+		}
+		cout << endl;
+	}
+	/*
 		6)
 		*********
 		 *******
 		  *****
 		   ***
-		    *
+			*
+	*/
+	cout << endl << "6번" << endl;
+	for (int i6 = 0; i6 < 5; i6++) { //칸수
+		for (int empty2 = 0; empty2 < i6; empty2++) { //공백
+			cout << " ";
+		}
+		for (int star2 = 9; star2 > 2 * i6; star2--) { //별
+			cout << "*";
+		}
+		cout << endl;
+	}
 
-		7)
+	/*
+			7)
 			*
 		   ***
 		  *****
@@ -380,280 +393,25 @@ int main()
 		  *****
 		   ***
 			*
-		
 	*/
-	// 1)
-	cout << endl << "1번" << endl;
-	int memory1_num;
-	for (int star1 = 1; star1 < 6; star1++) {
-		memory1_num = star1;
-		while (star1 != 0) {
-			cout << "*";
-			star1--;
-		}
-		star1 = memory1_num;
-		cout << endl;
-	}
-	cout << endl << "1번" << endl;
-	for (int i = 0; i <= 5; i++) {
-		for (int j = 0; j < i; j++) {
-			cout << "*";
-		}
-		for (int k = 5; k > i; k--) {
-			cout << " ";
-		}
-		cout << endl;
-	}
-
-	// 2)
-	cout << endl << "2번" << endl;
-	int star_count2 = 1;
-	for (int star2 = 1; star2 < 6; star2++) {
-		if (star_count2 == 1) {
-			cout << "    *";
-		}
-		else if (star_count2 == 2) {
-			cout << "   **";
-		}
-		else if (star_count2 == 3) {
-			cout << "  ***";
-		}
-		else if (star_count2 == 4) {
-			cout << " ****";
-		}
-		else if (star_count2 == 5) {
-			cout << "*****";
-		}
-		star_count2++;
-		cout << endl;
-	}
-	cout << endl << "2번" << endl;
-	for (int i = 0; i <= 5; i++) {
-		for (int j = 5; j > i; j--) {
-			cout << " ";
-		}
-		for (int k = 0; k < i; k++) {
-			cout << "*";
-		}
-		cout << endl;
-	}
-
-	// 3)
-	cout << endl << "3번" << endl;
-	int memory3_num;
-	int star_count3 = 5;
-	for (int star1 = 1; star1 < 6; star1++) {
-		memory3_num = star_count3;
-		while (star_count3 != 0) {
-			cout << "*";
-			star_count3--;
-		}
-		star_count3 = memory3_num-1;
-		cout << endl;
-	}
-	cout << endl << "3번" << endl;
-	for (int i = 0; i <= 5; i++) {
-		for (int j = 5; j > i; j--) {
-			cout << "*";
-		}
-		for (int k = 0; k < i; k++) {
-			cout << " ";
-		}
-		cout << endl;
-	}
-
-	// 4)
-	cout << endl << "4번" << endl;
-	int star_count4 = 1;
-	for (int star4 = 1; star4 < 6; star4++) {
-		if (star_count4 == 1) {
-			cout << "*****";
-		}
-		else if (star_count4 == 2) {
-			cout << " ****";
-		}
-		else if (star_count4 == 3) {
-			cout << "  ***";
-		}
-		else if (star_count4 == 4) {
-			cout << "   **";
-		}
-		else if (star_count4 == 5) {
-			cout << "    *";
-		}
-		star_count4++;
-		cout << endl;
-	}
-	cout << endl << "4번" << endl;
-	for (int i = 0; i <= 5; i++) {
-		for (int j = 0; j < i; j++) {
-			cout << " ";
-		}
-		for (int k = 5; k > i; k--) {
-			cout << "*";
-		}
-		cout << endl;
-	}
-
-	// 5)
-	cout << endl << "5번" << endl;
-	int star_count5 = 1;
-	for (int star5 = 1; star5 < 6; star5++) {
-		if (star_count5 == 1) {
-			cout << "    *    ";
-		}
-		else if (star_count5 == 2) {
-			cout << "   ***   ";
-		}
-		else if (star_count5 == 3) {
-			cout << "  *****  ";
-		}
-		else if (star_count5 == 4) {
-			cout << " ******* ";
-		}
-		else if (star_count5 == 5) {
-			cout << "*********";
-		}
-		star_count5++;
-		cout << endl;
-	}
-
-	// 6)
-	cout << endl << "6번" << endl;
-	int star_count6 = 1;
-	for (int star6 = 1; star6 < 6; star6++) {
-		if (star_count6 == 1) {
-			cout << "*********";
-		}
-		else if (star_count6 == 2) {
-			cout << " ******* ";
-		}
-		else if (star_count6 == 3) {
-			cout << "  *****  ";
-		}
-		else if (star_count6 == 4) {
-			cout << "   ***   ";
-		}
-		else if (star_count6 == 5) {
-			cout << "    *    ";
-		}
-		star_count6++;
-		cout << endl;
-	}
-
-	// 7)
 	cout << endl << "7번" << endl;
-	int star_count7 = 1;
-	for (int star7 = 1; star7 < 10; star7++) {
-		if (star_count7 == 1) {
-			cout << "    *    ";
+	int i7, empty3, star3;
+	for (i7 = 0; i7 < 5; i7++) { //칸수
+		for (empty3 = 4; empty3 > i7; empty3--) { //공백
+			cout << " ";
 		}
-		else if (star_count7 == 2) {
-			cout << "   ***   ";
+		for (star3 = 0; star3 < 2 * i7 + 1; star3++) { //별
+			cout << "*";
 		}
-		else if (star_count7 == 3) {
-			cout << "  *****  ";
-		}
-		else if (star_count7 == 4) {
-			cout << " ******* ";
-		}
-		else if (star_count7 == 5) {
-			cout << "*********";
-		}
-		else if (star_count7 == 6) {
-			cout << " ******* ";
-		}
-		else if (star_count7 == 7) {
-			cout << "  *****  ";
-		}
-		else if (star_count7 == 8) {
-			cout << "   ***   ";
-		}
-		else if (star_count7 == 9) {
-			cout << "    *    ";
-		}
-		star_count7++;
 		cout << endl;
 	}
-
-	// 5)
-	cout << "5번" << endl;
-	int star_count5 = 1;
-	for (int star5 = 1; star5 < 6; star5++) {
-		if (star_count5 == 1) {
-			cout << "    *    ";
+	for (i7 = 1; i7 < 5; i7++) { //칸수
+		for (empty3 = 0; empty3 < i7; empty3++) { //공백
+			cout << " ";
 		}
-		else if (star_count5 == 2) {
-			cout << "   ***   ";
+		for (star3 = 9; star3 > 2 * i7; star3--) { //별
+			cout << "*";
 		}
-		else if (star_count5 == 3) {
-			cout << "  *****  ";
-		}
-		else if (star_count5 == 4) {
-			cout << " ******* ";
-		}
-		else if (star_count5 == 5) {
-			cout << "*********";
-		}
-		star_count5++;
-		cout << endl;
-	}
-
-	// 6)
-	cout << endl << "6번" << endl;
-	int star_count6 = 1;
-	for (int star6 = 1; star6 < 6; star6++) {
-		if (star_count6 == 1) {
-			cout << "*********";
-		}
-		else if (star_count6 == 2) {
-			cout << " ******* ";
-		}
-		else if (star_count6 == 3) {
-			cout << "  *****  ";
-		}
-		else if (star_count6 == 4) {
-			cout << "   ***   ";
-		}
-		else if (star_count6 == 5) {
-			cout << "    *    ";
-		}
-		star_count6++;
-		cout << endl;
-	}
-
-	// 7)
-	cout << endl << "7번" << endl;
-	int star_count7 = 1;
-	for (int star7 = 1; star7 < 10; star7++) {
-		if (star_count7 == 1) {
-			cout << "    *    ";
-		}
-		else if (star_count7 == 2) {
-			cout << "   ***   ";
-		}
-		else if (star_count7 == 3) {
-			cout << "  *****  ";
-		}
-		else if (star_count7 == 4) {
-			cout << " ******* ";
-		}
-		else if (star_count7 == 5) {
-			cout << "*********";
-		}
-		else if (star_count7 == 6) {
-			cout << " ******* ";
-		}
-		else if (star_count7 == 7) {
-			cout << "  *****  ";
-		}
-		else if (star_count7 == 8) {
-			cout << "   ***   ";
-		}
-		else if (star_count7 == 9) {
-			cout << "    *    ";
-		}
-		star_count7++;
 		cout << endl;
 	}
 }
