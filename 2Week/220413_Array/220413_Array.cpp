@@ -258,7 +258,18 @@ int main()
 	*/
 	srand(time(NULL));
 	int x = 0, y = 0; // for문을 위한 변수
-	int map[10][10] = { 0, }; // [10][10] 맵
+	/*int map[10][10] = { {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+						{0, 1, 1, 0, 1, 0, 1, 1, 1, 0},
+						{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+						{0, 1, 0, 1, 1, 0, 1, 1, 1, 0},
+						{0, 1, 0, 0, 1, 0, 0, 1, 0, 0},
+						{0, 1, 1, 0, 1, 1, 0, 1, 0, 1},
+						{0, 0, 1, 0, 0, 0, 0, 0, 0, 1},
+						{1, 0, 0, 0, 1, 0, 0, 1, 0, 1},
+						{1, 1, 0, 1, 1, 1, 0, 0, 0, 0},
+						{0, 0, 0, 0, 0, 0, 0, 1, 0, 1} }; // [10][10] 맵
+						*/
+	int map[10][10] = { 0, };
 	int player_xposition = 0; // 플레이어 x좌표
 	int player_yposition = 0; // 플레이어 y좌표
 	int escape_xposition; // 탈출구 x좌표
@@ -287,6 +298,9 @@ int main()
 				if (map[x][y] == 0) {
 					cout << "□";
 				}
+				else if (map[x][y] == 1) {
+					cout << "■";
+				}
 				else if (map[x][y] == 8) {
 					cout << "Ε";
 				}
@@ -308,25 +322,25 @@ int main()
 		}
 		switch (input_move_key) {
 		case 'w': //위쪽 이동
-			if (player_xposition != 0) { //배열에서[0][]일경우 위쪽으로 이동할 수 없어야함
+			if (player_xposition != 0 && map[player_xposition - 1][player_yposition] != 1) { //배열에서[0][]일경우 위쪽으로 이동할 수 없어야함
 				map[player_xposition][player_yposition] = 0;
 				player_xposition--;
 			}
 			break;
 		case 'a': //왼쪽 이동
-			if (player_yposition != 0) { //배열에서 [][0]일경우 왼쪽으로 이동 할 수 없어야함
+			if (player_yposition != 0 && map[player_xposition][player_yposition-1] != 1) { //배열에서 [][0]일경우 왼쪽으로 이동 할 수 없어야함
 				map[player_xposition][player_yposition] = 0;
 				player_yposition--;
 			}
 			break;
 		case 's': //아래쪽 이동
-			if (player_xposition != 9) { //배열에서 [10][]일경우 아래쪽으로 이동 할 수 없어야함
+			if (player_xposition != 9 && map[player_xposition + 1][player_yposition] != 1) { //배열에서 [10][]일경우 아래쪽으로 이동 할 수 없어야함
 				map[player_xposition][player_yposition] = 0;
 				player_xposition++;
 			}
 			break;
 		case 'd': //오른쪽 이동
-			if (player_yposition != 9) { //배열에서 [][10]일경우 오른쪽으로 이동 할 수 없어야함
+			if (player_yposition != 9 && map[player_xposition][player_yposition + 1] != 1) { //배열에서 [][10]일경우 오른쪽으로 이동 할 수 없어야함
 				map[player_xposition][player_yposition] = 0;
 				player_yposition++;
 			}
